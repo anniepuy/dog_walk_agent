@@ -2,6 +2,7 @@ from picoagents import Agent
 from tools.current_time import get_current_time
 from tools.location import get_coordinates
 from tools.weather import get_weather
+from memory_store import memory
 
 from client.ollama_client import get_client
 
@@ -17,4 +18,5 @@ dog_walk_agent = Agent(
         get_coordinates,
         get_weather
     ],
+    memory=memory,
 )
