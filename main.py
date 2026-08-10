@@ -5,7 +5,7 @@ from agent import dog_walk_agent
 
 async def main():
     async for item in dog_walk_agent.run_stream(
-        "What time is it right now?",
+        "What is the weather in Atlanta, Georgia right now?",
         verbose=True,
     ):
         print(item)
