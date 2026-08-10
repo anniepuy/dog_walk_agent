@@ -5,7 +5,7 @@ from agent import dog_walk_agent
 
 async def main():
     async for item in dog_walk_agent.run_stream(
-        "Hello! What is your job?",
+        "What time is it right now?",
         verbose=True,
     ):
         print(item)
