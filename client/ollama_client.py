@@ -1,6 +1,6 @@
 from picoagents import OpenAIChatCompletionClient
 
-OLLAMA_BASE_URL = "https://localhost:11434/v1"
+OLLAMA_BASE_URL = "http://localhost:11434/v1"
 DEFAULT_MODEL = "qwen3.6:35b-mlx"
 
 def get_client(model: str = DEFAULT_MODEL) -> OpenAIChatCompletionClient:
