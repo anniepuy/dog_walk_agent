@@ -14,17 +14,13 @@ from memory_store import add_memory
 
 # post add memory recall
 async def main():
-    first_response = await dog_walk_agent.run(
-        "I live in Atlanta, Georgia."
+    response = await dog_walk_agent.run(
+        "I live in Atlanta, Georgia. Should I walk the dog right now?"
     )
 
-    print(first_response.messages[-1].content)
+    final_message = response.messages[-1]
 
-    second_response = await dog_walk_agent.run(
-        "Is the air quality good enough to walk the dog right now?"
-    )
-
-    print(second_response.messages[-1].content)
+    print(final_message.structured_content)
 
 if __name__ == "__main__":
     asyncio.run(main())

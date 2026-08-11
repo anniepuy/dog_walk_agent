@@ -6,7 +6,7 @@ from tools.memory import remember_fact
 from tools.sunrise_sunset import get_sunrise_sunset
 from tools.air_quality import get_air_quality
 from memory_store import memory
-
+from models.walk_decision import WalkDecision
 from client.ollama_client import get_client
 
 client = get_client()
@@ -35,4 +35,5 @@ dog_walk_agent = Agent(
         remember_fact
     ],
     memory=memory,
+    output_format=WalkDecision,
 )
