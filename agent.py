@@ -4,6 +4,7 @@ from tools.location import get_coordinates
 from tools.weather import get_weather
 from tools.memory import remember_fact
 from tools.sunrise_sunset import get_sunrise_sunset
+from tools.air_quality import get_air_quality
 from memory_store import memory
 
 from client.ollama_client import get_client
@@ -21,7 +22,7 @@ dog_walk_agent = Agent(
     "When the user tells you a stable fact about themselves or their dog "
     "that could be useful in future conversations, use the remember_fact tool "
     "to save it. "
-    "Do not call weather, location, or time tools unless they are needed "
+    "Do not call weather, location, air quality or time tools unless they are needed "
     "to answer a question or complete a request."
     ),
     model_client=client,
@@ -30,6 +31,7 @@ dog_walk_agent = Agent(
         get_coordinates,
         get_weather,
         get_sunrise_sunset,
+        get_air_quality,
         remember_fact
     ],
     memory=memory,

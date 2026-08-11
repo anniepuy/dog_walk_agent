@@ -21,7 +21,7 @@ async def main():
     print(first_response.messages[-1].content)
 
     second_response = await dog_walk_agent.run(
-        "Is it still light enough to walk the dog right now?"
+        "Is the air quality good enough to walk the dog right now?"
     )
 
     print(second_response.messages[-1].content)
