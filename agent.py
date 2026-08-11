@@ -3,6 +3,7 @@ from tools.current_time import get_current_time
 from tools.location import get_coordinates
 from tools.weather import get_weather
 from tools.memory import remember_fact
+from tools.sunrise_sunset import get_sunrise_sunset
 from memory_store import memory
 
 from client.ollama_client import get_client
@@ -28,6 +29,7 @@ dog_walk_agent = Agent(
         get_current_time,
         get_coordinates,
         get_weather,
+        get_sunrise_sunset,
         remember_fact
     ],
     memory=memory,
