@@ -1,7 +1,7 @@
 from tools.current_time import get_current_time
 
 def test_get_current_time_returns_string():
-    result = get_current_time()
+    result = get_current_time("America/New_York")
 
     assert isinstance(result, str)
-    assert len(result) >0
+    assert len(result) > 0
