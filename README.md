@@ -33,3 +33,31 @@ class WalkDecision(BaseModel):
     reasons: List[str]
     risks: List[str]
 ```
+
+## Set up
+
+ollama pull qwen3:30b # install Ollama first, then pull the model
+pip install -r requirements.txt
+
+## Use
+
+python main.py
+
+## Tests
+
+pytest
+
+## Project structure
+
+agent.py # Agent: tools, memory, structured output
+main.py # Entry point / demo query
+client/ollama_client.py # Local Ollama (OpenAI-compatible) client
+models/walk_decision.py # WalkDecision output schema
+memory_store.py # Agent memory (ListMemory)
+tools/ # time, location, weather, air_quality, sunrise_sunset, memory
+tests/ # pytest suite per tool
+
+## Notes & Roadmap
+
+Memory is an in-process ListMemory, so remembered facts don't persist across runs yet — persisting to disk is the natural next step.
+The entry point hardcodes a sample prompt; a small CLI / interactive loop would make it usable day-to-day.
